@@ -1,0 +1,27 @@
+Components Required:
+1. NodeMCU
+2. Buzzer
+3. Smoke Sensor
+4. Fire Sensor
+
+
+Algorithm:
+The following steps are followed in the system implementation:
+1. The smoke sensor detects the analogous smoke value from the surrounding.
+2. The fire sensor detects the fire value as ‘0’ or ‘1’ if the fire is present or not respectively.
+3. Smoke and fire sensors are connected to the Node MCU.
+4. The Node MCU sends the received information through the Arduino IDE to the cloud.
+5. The Arduino code consists of the entire set up required for the connection to be server and the MQTT protocol used for the connection.
+6. The arduino code has the data which needs to be published on the cloud based on certain conditions.
+7. The information from the cloud is retrieved through a mobile app.
+8. Status is ‘NO SMOKE’ when the smoke value is less than the threshold value and ‘SMOKE DETECTED’ when the smoke value is higher than the threshold.
+9. Status is ‘FIRE DETECTED’ when the fire is present and ‘NO FIRE’ when there is no fire.
+10. The user is alerted when the smoke is detected and fire is present by the alarming sound of the buzzer.
+
+
+Implementаtion :
+Smoke and Fire Detector senses the smoke value at all times from the surroundings. The smoke value detection is possible because of the microcontroller used called as NodeMCU. The microcontroller has a small inexpensible Wi-Fi chip called as ESP826 and the microcontroller is connected to three other devices called as the Fire Sensor, Smoke Sensor and the Buzzer. Here, in our project, NodeMCU(microcontroller) acts as the publisher of the data which publishes the data to the cloud via the broker, Mosquitto is the broker and our smart device acts as the subscriber which takes the information from the cloud.
+The NodeMCU is connected with the Laptop using a USB Cable. This allows us to connect the Arduino code for the working of the NodeMCU IDE. Here, in the project, the internet is provided by the mobile hotspot but the system is designed in such a way that it can be connected to the internet with any other device also by just changing the required fields in a specific part of the code. The internet connection helps to connect to the cloud using the MQTT protocol.MQTT protocol is used because this protocol allows load management that is it can handle multiple users at a time. Also, it enables the use of dynamic data that is, sending a new data to the cloud everytime it receives the value using the smoke sensor. Also, MQTT protocol is a lightweight protocol.
+The smoke sensor is an analogous device. It provides the values ranging from 1 to 1000. Every time, there is a variation in the smoke value in the surrounding, it senses the change in value and sends the data to the cloud. Users can install an app which allows them to monitor the smoke and fire values at all times. The Arduino code is set with a threshold value which is ‘350’, which when exceeded causes the buzzer to beep and causes the fire sensor to detect the value as ‘0’ meaning the Fire is present. When, the smoke value is less than the threshold value, the user can view the status of smoke as ‘NO SMOKE’ and of fire as ‘NO FIRE’ along with the smoke value and fire value. But if there is smoke and fire, then the status can be seen as ‘SMOKE DETECTED’ and ‘FIRE DETECTED’.
+
+
