@@ -1,1 +1,2 @@
 # Smoke-and-Fire-Detector
+Smoke and Fire Detector System senses the smoke value at all times and alerts the user as and when required that is it alarms the people whenever the smoke value is exceeding its thresh hold value with the help of a buzzer, so that they can protect themselves from a hazardous situation. The smart system will send the smoke status to the cloud using the MQTT protocol and the cloud information can be accessed by the people. This will help in the regular monitoring of the smoke status.
